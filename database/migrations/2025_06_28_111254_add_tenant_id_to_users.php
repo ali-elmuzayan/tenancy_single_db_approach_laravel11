@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('tenant_id')
+            $table->foreignId('tenant_id')->nullable()
                 ->constrained('tenants')
                 ->onDelete('cascade')
                 ->after('id'); // Assuming 'id' is the last column in the 'users' table
