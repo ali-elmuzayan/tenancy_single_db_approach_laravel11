@@ -30,3 +30,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+// the custom single database approach had finish 
