@@ -16,7 +16,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', function () {
         $user = Auth::user()->load('tenant');
-        $users = User::tenantUsers()->get();
+        $users = User::get();
 
         return view('dashboard', get_defined_vars());
     })->name('dashboard');

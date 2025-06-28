@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Models\Scopes\TenantScope;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -54,9 +55,13 @@ class User extends Authenticatable
         return $this->belongsTo(Tenant::class, 'tenant_id', 'id');
     }
 
-    public static function  scopeTenantUsers(Builder $query)
-    {
-        return $query->where('tenant_id', Auth::user()->tenant_id);
+
+    public static function booted() {
+        // check the authenticated because the first time we need to fetch the user who is the authenticated user
+        if(Auth::check()) {
+
+            static::addGlobalScope(new TenantScope);
+        }
     }
 
 }

@@ -14,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::with('tenant')->tenantArticle()->get();
+        $articles = Article::with('tenant')->get();
         return view('articles.index', get_defined_vars());
     }
 
@@ -32,7 +32,7 @@ class ArticleController extends Controller
     public function store(StoreArticleRequest $request)
     {
         $data = $request->validated();
-        
+
         Article::create($data);
         return redirect(route('articles.index'));
     }
