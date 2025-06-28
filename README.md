@@ -1,4 +1,3 @@
-markdown
 # Laravel 11 Multi-Tenancy (Single Database)
 
 [![Latest Version](https://img.shields.io/github/v/release/your-username/laravel11-multi-tenancy-single-db?style=flat-square)](https://github.com/your-username/laravel11-multi-tenancy-single-db/releases)
@@ -14,11 +13,12 @@ A robust multi-tenancy solution for Laravel 11 applications using a single datab
 🛡️ **Data Isolation** - Automatic query scoping to ensure tenant data separation  
 ⚡ **Performance Optimized** - Minimal overhead compared to multi-database approaches  
 🔧 **Tenant-Specific Configs** - Customize settings per tenant (e.g., themes, payment gateways)  
-📦 **Out-of-the-Box Setup** - Includes migrations, models, middleware, and service classes  
+📦 **Out-of-the-Box Setup** - Includes migrations, models, middleware, and service classes
 
 ## Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/laravel11-multi-tenancy-single-db.git
-   cd laravel11-multi-tenancy-single-db
+    ```bash
+    git clone https://github.com/your-username/laravel11-multi-tenancy-single-db.git
+    cd laravel11-multi-tenancy-single-db
+    ```

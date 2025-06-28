@@ -10,4 +10,9 @@ class Tenant extends Model
     /** @use HasFactory<\Database\Factories\TenantFactory> */
     use HasFactory;
     protected $guarded = [];
+
+    public function users()
+    {
+        return $this->hasMany(User::class, 'tenant_id', 'id');
+    }
 }

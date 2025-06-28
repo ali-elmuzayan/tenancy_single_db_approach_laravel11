@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,10 +12,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     $user = Auth::user()->load('tenant');
+    $users = User::tenantUsers()->get();
 
-    return view('dashboard', [
-        'user' => $user,
-    ]);
+    return view('dashboard', get_defined_vars());
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
