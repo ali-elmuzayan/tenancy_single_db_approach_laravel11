@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
 use App\Models\Tenant;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -23,7 +24,13 @@ class UserSeeder extends Seeder
             User::factory()->count(5)->create([
                 'tenant_id' => $tenant,
             ]);
+              Article::factory()->count(5)->create([
+                'tenant_id' => $tenant,
+            ]);
         }
+
+
+
 
     }
 }
